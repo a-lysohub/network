@@ -1,0 +1,28 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogsItems {
+    padding: 10px;
+}
+.dialogsItems {
+}
+
+.dialog.active {
+    color:rgb(109, 106, 106);
+}
+.dialog.active a {
+    color: white;
+    text-decoration: none;
+}
+.messages {
+
+}
+.message {
+    color: white;
+}
+.avatar {
+    width: 18px;
+    border-radius: 50%;
+}
+

@@ -1,0 +1,13 @@
+.navbar {
+  grid-area: sidebar;
+  background-color: rgba(77, 224, 193, 0.733);
+  margin-right: 7px;
+  padding: 20px;
+}
+.item a {  
+  color: white;
+  text-decoration: none;
+}
+.item a.activeLink {
+  color:rgb(109, 106, 106);
+}
