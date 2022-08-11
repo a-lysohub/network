@@ -1,13 +1,14 @@
 .navbar {
   grid-area: sidebar;
-  background-color: rgba(77, 224, 193, 0.733);
+  background-color: rgba(88, 88, 88, 0.733);
   margin-right: 7px;
-  padding: 20px;
+  padding: 20px;  
+  border-radius: 8px;
 }
 .item a {  
-  color: white;
+  color: rgb(210, 210, 210);
   text-decoration: none;
 }
 .item a.activeLink {
-  color:rgb(109, 106, 106);
+  color:rgb(27, 27, 27);
 }
