@@ -1,22 +1,20 @@
 import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
-/* import { addPost } from "./Redux/State"; */
 
 const MyPosts = (props) => {
     const postsElements = props.postsData.map((el) => (
-        <Post message={el.message} likeCount={el.likes} />
+        <Post message={el.message} likesCount={el.likes} />
     ));
 
     let newPostEl = React.createRef();
 
-    const addNewPost = () => {
-        const text = newPostEl.current.value;
-        props.addPost(text);
-        newPostEl.current.value = "";
+    const addPost = () => {
+        props.addNewPost();
     };
     const changeNewPost = () => {
-        props.newPostText = newPostEl.current.value;
+        const text = newPostEl.current.value;
+        props.updateNewPostText(text);
     };
 
     return (
@@ -31,7 +29,7 @@ const MyPosts = (props) => {
                     />
                 </div>
                 <div>
-                    <button onClick={addNewPost}>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div className={classes.postsData}>{postsElements}</div>

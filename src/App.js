@@ -1,9 +1,11 @@
+import { BrowserRouter, Route } from "react-router-dom";
+
 import "./App.css";
+
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Profile from "./components/Profile/Profile";
-import { BrowserRouter, Route } from "react-router-dom";
 
 const App = (props) => {
     const navbar = props.state.mainPage.navBar;
@@ -17,9 +19,10 @@ const App = (props) => {
                         path="/profile"
                         render={() => (
                             <Profile
-                                state={props.state.profilePage}
-                                addPost={props.addPost}
+                                profilePage={props.state.profilePage}
                                 newPostText={props.newPostText}
+                                updateNewPostText={props.updateNewPostText}
+                                addNewPost={props.addNewPost}
                             />
                         )}
                     />
