@@ -4,7 +4,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-import { addNewPost, updateNewPostText, state, subscribe } from "./Redux/State";
+import {
+    addNewPost,
+    addNewMsg,
+    updateNewPostText,
+    updateNewMsgText,
+    state,
+    subscribe,
+} from "./Redux/State";
 
 const rerenderEntireTree = (state) => {
     ReactDOM.render(
@@ -13,6 +20,8 @@ const rerenderEntireTree = (state) => {
                 state={state}
                 addNewPost={addNewPost}
                 updateNewPostText={updateNewPostText}
+                addNewMsg={addNewMsg}
+                updateNewMsgText={updateNewMsgText}
             />
         </React.StrictMode>,
         document.getElementById("root")

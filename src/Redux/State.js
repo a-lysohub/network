@@ -1,6 +1,6 @@
 let rerenderEntireTree = () => {
-    console.log('State was changed')
-}
+    console.log("State was changed");
+};
 
 export const state = {
     profilePage: {
@@ -68,6 +68,7 @@ export const state = {
             { id: "4", message: "=)" },
             { id: "5", message: ":)" },
         ],
+        newMsgText: "",
     },
     mainPage: {
         navBar: [
@@ -82,7 +83,7 @@ export const state = {
 
 export const addNewPost = () => {
     let newPost = {
-        id: 5,
+        id: 6,
         message: state.profilePage.newPostText,
         likesCount: 0,
     };
@@ -96,8 +97,23 @@ export const updateNewPostText = (newText) => {
     rerenderEntireTree(state);
 };
 
+export const addNewMsg = () => {
+    let newMsg = {
+        id: 6,
+        message: state.messagePage.newMsgText,
+    };
+    state.messagePage.messagesData.push(newMsg);
+    state.messagePage.newMsgText = "";
+    rerenderEntireTree(state);
+};
+
+export const updateNewMsgText = (newText) => {
+    state.messagePage.newMsgText = newText;
+    rerenderEntireTree(state);
+};
+
 export const subscribe = (observer) => {
     rerenderEntireTree = observer;
-}
+};
 
 export default state;

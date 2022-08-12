@@ -30,8 +30,11 @@ const App = (props) => {
                         path="/messages"
                         render={() => (
                             <Dialogs
-                                state={props.state.messagePage}
+                                state={props.state.messagePage}                                
+                                newPostText={props.newMsgText}
                                 className="active"
+                                addNewMsg={props.addNewMsg}
+                                updateNewMsgText={props.updateNewMsgText}
                             />
                         )}
                     />
