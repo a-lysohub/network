@@ -5,28 +5,23 @@ import "./index.css";
 import App from "./App";
 
 import {
-    addNewPost,
-    addNewMsg,
-    updateNewPostText,
-    updateNewMsgText,
-    state,
-    subscribe,
+    store
 } from "./Redux/State";
 
-const rerenderEntireTree = (state) => {
+const rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <App
-                state={state}
-                addNewPost={addNewPost}
-                updateNewPostText={updateNewPostText}
-                addNewMsg={addNewMsg}
-                updateNewMsgText={updateNewMsgText}
+                state={store.getState()}
+                addNewPost={store.addNewPost.bind(store)}
+                updateNewPostText={store.updateNewPostText.bind(store)}
+                addNewMsg={store.addNewMsg.bind(store)}
+                updateNewMsgText={store.updateNewMsgText.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById("root")
     );
 };
 
-rerenderEntireTree(state);
-subscribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree);
