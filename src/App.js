@@ -20,9 +20,10 @@ const App = (props) => {
                         render={() => (
                             <Profile
                                 profilePage={props.state.profilePage}
+                                dispatch={props.dispatch}
                                 newPostText={props.newPostText}
-                                updateNewPostText={props.updateNewPostText}
-                                addNewPost={props.addNewPost}
+                                // updateNewPostText={props.updateNewPostText}
+                                // addNewPost={props.addNewPost}
                             />
                         )}
                     />
@@ -30,11 +31,12 @@ const App = (props) => {
                         path="/messages"
                         render={() => (
                             <Dialogs
-                                state={props.state.messagePage}                                
-                                newPostText={props.newMsgText}
-                                className="active"
-                                addNewMsg={props.addNewMsg}
-                                updateNewMsgText={props.updateNewMsgText}
+                                state={props.state.messagePage}
+                                dispatch={props.dispatch}
+                                // newPostText={props.newMsgText}
+                                // className="active"
+                                // addNewMsg={props.addNewMsg}
+                                // updateNewMsgText={props.updateNewMsgText}
                             />
                         )}
                     />
