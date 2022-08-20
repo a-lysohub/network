@@ -6,7 +6,7 @@ import App from "./App";
 
 import {
     store
-} from "./Redux/State";
+} from "./redux/state";
 
 const rerenderEntireTree = () => {
     ReactDOM.render(
