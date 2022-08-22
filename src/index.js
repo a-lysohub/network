@@ -4,9 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-import {
-    store
-} from "./redux/state";
+import store from "./redux/reduxStore";
 
 const rerenderEntireTree = () => {
     ReactDOM.render(
@@ -14,10 +12,7 @@ const rerenderEntireTree = () => {
             <App
                 state={store.getState()}
                 dispatch={store.dispatch.bind(store)}
-                // addNewPost={store.addNewPost.bind(store)}
-                // updateNewPostText={store.updateNewPostText.bind(store)}
-                // addNewMsg={store.addNewMsg.bind(store)}
-                // updateNewMsgText={store.updateNewMsgText.bind(store)}
+                store={store}
             />
         </React.StrictMode>,
         document.getElementById("root")
@@ -25,4 +20,7 @@ const rerenderEntireTree = () => {
 };
 
 rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree(state);
+});

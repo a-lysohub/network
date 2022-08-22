@@ -33,7 +33,6 @@ const Dialogs = (props) => {
             <div className={classes.dialogsItems}>{dialogsItem}</div>
             <div className={classes.messages}>
                 <div className={classes.messagesData}>{messagesItem}</div>
-                {/* {messagesItem} */}
                 <textarea
                     onChange={changeNewMsg}
                     ref={newMsgElem}

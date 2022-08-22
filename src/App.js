@@ -8,20 +8,21 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Profile from "./components/Profile/Profile";
 
 const App = (props) => {
-    const navbar = props.state.mainPage.navBar;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header />
-                <Navbar navbar={navbar} />
+                <Navbar state={props.state.mainPage} />
                 <div className="app-wrapper-content">
                     <Route
                         path="/profile"
                         render={() => (
                             <Profile
-                                profilePage={props.state.profilePage}
+                                state={props.state.profilePage}
                                 dispatch={props.dispatch}
-                                newPostText={props.state.newPostText}
+                                newPostText={
+                                    props.state.profilePage.newPostText
+                                }
                             />
                         )}
                     />

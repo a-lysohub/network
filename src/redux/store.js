@@ -1,7 +1,8 @@
 import dialogsReducer from "./dialogsReducer";
+import mainPageReducer from "./mainPageReducer";
 import profileReducer from "./profileReducer";
 
-export let store = {
+let store = {
     _state: {
         profilePage: {
             postsData: [
@@ -71,7 +72,7 @@ export let store = {
             newMsgText: "newMsgText",
         },
         mainPage: {
-            navBar: [
+            navBarData: [
                 { name: "Profile", address: "/profile" },
                 { name: "Messages", address: "/messages" },
                 { name: "News", address: "/news" },
@@ -113,6 +114,10 @@ export let store = {
             this._state.messagePage,
             action
         );
+        this._state.mainPage = mainPageReducer(
+            this._state.mainPage,
+            action
+        )
 
         this._callSubscriber(this._state);
     },
