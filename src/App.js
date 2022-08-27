@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
+import NavbarContainer from "./components/Navbar/NavbarContainer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Profile from "./components/Profile/Profile";
 
@@ -12,7 +12,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header />
-                <Navbar state={props.state.mainPage} />
+                <NavbarContainer store={props.store} />
                 <div className="app-wrapper-content">
                     <Route
                         path="/profile"
@@ -20,14 +20,7 @@ const App = (props) => {
                     />
                     <Route
                         path="/messages"
-                        render={() => (
-                            <DialogsContainer
-                                store={props.store}
-                                // state={props.state.messagePage}
-                                // dispatch={props.dispatch}
-                                // newMsgText={props.state.messagePage.newMsgText}
-                            />
-                        )}
+                        render={() => <DialogsContainer store={props.store} />}
                     />
                     <Route path="/news" component={Profile} />
                     <Route path="/music" component={Profile} />

@@ -2,7 +2,8 @@ import classes from "./Navbar.module.css";
 import NavItem from "./NavItem/NavItem";
 
 const Navbar = (props) => {
-    const navBarItem = props.state.navBarData.map((el, i) => (
+    console.log(props)
+    const navBarItem = props.mainPage.navBarData.map((el, i) => (
         <NavItem key={i} name={el.name} address={el.address} />
     ));
 
