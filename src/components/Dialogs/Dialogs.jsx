@@ -6,14 +6,14 @@ import MessageItem from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
     const newMsgElem = react.createRef();
-    console.log('Dialogs: ', props)
 
     const onAddMsg = () => {
         props.addMsg();
     };
 
     const onChangeNewMsg = () => {
-        props.changeNewMsg(props.newMsgText);
+        const newMsgText = newMsgElem.current.value;
+        props.changeNewMsg(newMsgText);
     };
 
     const dialogsItem = props.dialogData.map((el, i) => {
