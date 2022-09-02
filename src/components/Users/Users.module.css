@@ -1,0 +1,29 @@
+.userItem {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 4px;
+}
+.avatarContainer {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+    align-content: center;
+}
+.info {
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 500px;
+    height: 60px;
+    color: white;
+}
+.avatar {
+    width: 60px;
+    border-radius: 50%;
+}
+.statusBtn {
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    border: solid black 0px;
+    width: 100px;
+    height: 25px;
+}

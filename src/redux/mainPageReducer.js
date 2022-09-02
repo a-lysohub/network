@@ -1,6 +1,7 @@
 const initialState = {
     navBarData: [
         { name: "Profile", address: "/profile" },
+        { name: "Users", address: "/users" },
         { name: "Messages", address: "/messages" },
         { name: "News", address: "/news" },
         { name: "Music", address: "/music" },
